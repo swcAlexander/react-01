@@ -1,30 +1,20 @@
-import Painting from "./components/Painting";
+import PaintingList from "./components/PaintingList";
 import paintings from "./components/paintings.json"
+import Section from "./components/Section";
 
- export default function App() {
+export default function App() {
+  // const isOnline = true;
   return (
+    
     <div>
-      <Painting
-        imageUrl={paintings[0].url}
-        title={paintings[0].title}
-        author={paintings[0].author.tag}
-        profileUrl={paintings[0].author.profileUrl}
-        price={paintings[0].price}
-      />
-      <Painting
-        imageUrl={paintings[1].url}
-        title={paintings[1].title}
-        author={paintings[1].author.tag}
-        profileUrl={paintings[1].author.profileUrl}
-        price={paintings[1].price}
-      />
-      <Painting
-        imageUrl={paintings[2].url}
-        title={paintings[2].title}
-        author={paintings[2].author.tag}
-        profileUrl={paintings[2].author.profileUrl}
-        price={paintings[2].price}
-      />
+      {/* {isOnline && 'Онлайн'} */}
+      {/* { isOnline ? 'Онлайн' : 'Офлайн'} */}
+
+      
+      <Section title="Топ неділі">
+        <PaintingList items={paintings} />
+      </Section>
+      <Section/>  
     </div>
   );
 }
